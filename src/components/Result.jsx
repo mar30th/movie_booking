@@ -7,8 +7,8 @@ export class Result extends Component {
     const {chairBooking, purchaseChairBooking, onRemoveChair, bookingChair} = this.props
     return (
       <div className="mt-5">
-        <h1 className="text-white">Booking List</h1>
-        <div className="mt-3">
+        <h1 className="text-white p-5">Booking List</h1>
+        <div className="">
           <div className="d-flex">
             <button className="seatBooked"></button>
             <p className="text-white ms-3" style={{lineHeight: 2}}>Booked chair</p>
@@ -22,6 +22,7 @@ export class Result extends Component {
             <p className="text-white ms-3" style={{lineHeight: 2}}>Available chair</p>
           </div>
         </div>
+        <hr />
         <div className="mt-5">
             <table className="table text-white">
                 <thead>
@@ -34,7 +35,7 @@ export class Result extends Component {
                 <tbody>
                     {chairBooking.map((chair) => {
                         return (
-                            <tr key={chair.seatNumber} className='text-warning'>
+                            <tr key={chair.seatNumber} className='text-warning fw-bold'>
                                 <td>{chair.seatNumber}</td>
                                 <td>{chair.price.toLocaleString()}$</td>
                                 <td><button className="btn btn-danger" onClick={() => onRemoveChair(chair.seatNumber)}>X</button></td>
@@ -44,12 +45,12 @@ export class Result extends Component {
                 </tbody>
                 <tfoot>
                     <td>Total</td>
-                    <td className="text-warning">
+                    <td className="text-warning fw-bold">
                     {chairBooking.reduce((sum, chair) => {
                         return (sum += chair.price)
                     }, 0).toLocaleString()}{''}$
                     </td>
-                    <button className="btn btn-success" onClick={(purchaseChairBooking)}>Purchase</button>
+                    <button className="btn btn-success fw-bold" onClick={(purchaseChairBooking)}>Purchase</button>
                 </tfoot>
             </table>
         </div>

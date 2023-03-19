@@ -1,22 +1,4 @@
 [ 
-      {
-      "row": "", 
-      "chairList": [
-        {"seatNumber":"1","price":0},
-        {"seatNumber":"2","price":0},
-        {"seatNumber":"3","price":0},
-        {"seatNumber":"4","price":0},
-        {"seatNumber":"5","price":0},
-        {"seatNumber":"6","price":0},
-        {"seatNumber":"7","price":0},
-        {"seatNumber":"8","price":0},
-        {"seatNumber":"9","price":0},
-        {"seatNumber":"10","price":0},
-        {"seatNumber":"11","price":0},
-        {"seatNumber":"12","price":0}
-      ] 
-    }
-    ,
     {
       "row": "A", 
       "chairList": [

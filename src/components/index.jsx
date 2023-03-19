@@ -10,13 +10,14 @@ export class Home extends Component {
       <div className='container'>
         <div className="row">
             <div className="col-8">
-                <h1 className='text-warning'>Movie Booking</h1>
+                <h1 className='text-warning fw-bold'>Movie Booking</h1>
+                <hr className='text-white'/>
                 <h4 className='text-warning'>SCREEN</h4>
                 <div className='screen d-flex justify-content-center'></div>
                 <ChairList />
             </div>
-            <div className="col-4">
-                <Result />
+            <div className="col-4 mt-4">
+                <Result/>
             </div>
         </div>
       </div>
