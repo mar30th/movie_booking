@@ -13,7 +13,7 @@ export const movieBookingReducer = (state = initialState, action) => {
       const index = cloneData.findIndex(
         (chair) => chair.seatNumber === action.payload.seatNumber
       );
-      if (index != -1) {
+      if (index !== -1) {
         cloneData.splice(index, 1);
       } else {
         cloneData.push(action.payload);
@@ -39,21 +39,23 @@ export const movieBookingReducer = (state = initialState, action) => {
       return { ...state, chairList: data, chairBooking: [] };
     }
 
-    // case REMOVE: {
-    //   const cloneChairBooking = [...state.chairBooking];
-    //   const index = cloneChairBooking.findIndex((chair) => chair.seatNumber === action.payload);
-    //   if(index = -1){
-    //     cloneChairBooking.splice(index, 1)
-    //   }
-    //   return { ...state, chairBooking: cloneChairBooking };
-    // //   for (let i in cloneChairBooking) {
-    // //     if (cloneChairBooking[i].seatNumber === action.payload) {
-    // //       cloneChairBooking.splice(i, 1);
-    // //     }
-    // //     state.chairBooking = cloneChairBooking;
-    // //     return { ...state };
-    // //   }
-    // }
+    case REMOVE: {
+      const cloneChairBooking = [...state.chairBooking];
+      // const index = cloneChairBooking.findIndex((chair) => chair.seatNumber === action.payload);
+      // if(index = -1){
+      //   cloneChairBooking.splice(index, 1)
+      // }
+      // return { ...state, chairBooking: cloneChairBooking };
+      for (let i in cloneChairBooking) {
+        if (cloneChairBooking[i].seatNumber === action.payload) {
+          console.log(action.payload);
+          console.log(cloneChairBooking[i].seatNumber);
+          cloneChairBooking.splice(i, 1)
+        }}
+        state.chairBooking = cloneChairBooking;
+        return { ...state };
+      
+    }
     default:
       return state;
   }

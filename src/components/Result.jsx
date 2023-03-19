@@ -37,7 +37,7 @@ export class Result extends Component {
                             <tr key={chair.seatNumber} className='text-warning'>
                                 <td>{chair.seatNumber}</td>
                                 <td>{chair.price.toLocaleString()}$</td>
-                                <td><button className="btn btn-danger" onClick={() => bookingChair(chair)}>X</button></td>
+                                <td><button className="btn btn-danger" onClick={() => onRemoveChair(chair.seatNumber)}>X</button></td>
                             </tr>
                         )
                     })}
@@ -49,7 +49,7 @@ export class Result extends Component {
                         return (sum += chair.price)
                     }, 0).toLocaleString()}{''}$
                     </td>
-                    <button className="btn btn-success" onClick={purchaseChairBooking}>Purchase</button>
+                    <button className="btn btn-success" onClick={(purchaseChairBooking)}>Purchase</button>
                 </tfoot>
             </table>
         </div>
